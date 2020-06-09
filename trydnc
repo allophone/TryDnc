@@ -1,0 +1,10 @@
+
+DIR=/home/detlev/windrive/e/perl/git/dancer2/TryDnc
+
+PORT=5000
+pu gstart.pl -b "http://d:$PORT"
+sleep 1
+nohup ffrefresh --no_restart $DIR > ~/.nohup/browser_refresh.txt &
+
+plackup -L Shotgun -o d -p $PORT $DIR/bin/app.psgi
+
